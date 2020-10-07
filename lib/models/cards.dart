@@ -11,20 +11,6 @@ class para{
   var entext;
   var isdone=false;
   para(this.text,this.entext);
-  final translator = GoogleTranslator();
-
-
-  transf (x)async{
-
-
-    var translation = await translator
-        .translate(x, from: 'en', to: 'ja');
-
-    return translation;
-
-  }
-  get a=>transf(text);
-
 }
 
 
