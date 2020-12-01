@@ -139,19 +139,21 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
     var model=Provider.of<CardsModel>(context);
     var model1=Provider.of<ad_counter>(context);
     var model2=Provider.of<translator_model>(context);
+    var size=MediaQuery.of(context).size;
+
     return SimpleDialog(
         contentPadding: EdgeInsets.all(30),
         children: <Widget>[
 
 
-          Container(padding: EdgeInsets.only(left: 55,bottom: 10),),
+          Container(padding: EdgeInsets.only(left: size.width*0.01,bottom: size.height*0.01),),
           Container(
-              height: 100,
+              height: size.height*0.15,
               decoration: BoxDecoration(color: Colors.white,
                   border: Border.all(color: Colors.blueAccent),
                   borderRadius: BorderRadius.all(Radius.circular(18))
               ),
-              child:Container(margin:EdgeInsets.symmetric(horizontal: 25,vertical: 20),
+              child:Container(margin:EdgeInsets.symmetric(horizontal: size.height*0.03,vertical: size.width*0.05),
                   child:TextFormField(
                     initialValue: en_text==""?null:en_text,
                     onChanged: (String s){
@@ -166,7 +168,7 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
                     ),
                   ))) ,
 
-          Container(alignment: Alignment.center,height: 40,
+          Container(alignment: Alignment.center,height: size.height*0.05,
           child:en_text==""?null:IconButton(icon:Icon(Icons.repeat)
           ,onPressed: (){
             futureAlbum=fetchAlbum(en_text,model2.front,model2.back);
@@ -178,7 +180,7 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
           )),
 
           Container(
-            height: 100,
+            height: size.height*0.15,
             decoration: BoxDecoration(color: Colors.white,border: Border.all(color: Colors.blueAccent),
                 borderRadius: BorderRadius.all(Radius.circular(18))
             ),
@@ -189,7 +191,7 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
     if (snapshot.hasData) {
       jap_text=snapshot.data.text;
               return Container(
-                  margin:EdgeInsets.symmetric(horizontal: 25,vertical: 20),
+                  margin:EdgeInsets.symmetric(horizontal: size.height*0.03,vertical: size.width*0.05),
                   child:(TextFormField(
                     initialValue: snapshot.data.text,
                     onChanged: (String s){
@@ -205,7 +207,7 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
                return CircularProgressIndicator();},
             )
                 :
-            Container(margin:EdgeInsets.symmetric(horizontal: 25,vertical: 20),
+            Container(margin:EdgeInsets.symmetric(horizontal: size.height*0.03,vertical: size.width*0.05),
                 child:(TextFormField(
                   initialValue: jap_text==""?null:jap_text,
                   onChanged: (String s){
@@ -220,10 +222,10 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
                 ))) ,),
           Row(
             children: [
-              Container(width: 30,),
+              Container(width: size.width*0.07,),
               Container(
-                  height: 25,
-                  width:22,
+                  height: size.height*0.055,
+                  width:size.width*0.055,
                   child:(
                       RaisedButton(
                         elevation: 0,
@@ -239,10 +241,10 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
                           orange=!orange;
                         });},
                       ))),
-              Container(width: 20,),
+              Container(width: size.width*0.05,),
               Container(
-                  height: 25,
-                  width:22,
+                  height: size.height*0.055,
+                  width:size.width*0.055,
                   child:(
                       RaisedButton(
                         elevation: 0,
@@ -258,10 +260,10 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
                           purple=!purple;
                         });},
                       ))),
-              Container(width: 20,),
+              Container(width: size.width*0.05,),
               Container(
-                  height: 25,
-                  width:22,
+                  height: size.height*0.055,
+                  width:size.width*0.055,
                   child:(
                       RaisedButton(
                         elevation: 0,
@@ -278,10 +280,10 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
                         });},
                       ))),
 
-              Container(width: 20,),
+              Container(width: size.width*0.05,),
               Container(
-                  height: 25,
-                  width: 22,
+                  height: size.height*0.055,
+                  width:size.width*0.055,
                   child:(
                       RaisedButton(
                         elevation: 0,
@@ -300,7 +302,7 @@ class _plusdialog_stfulState extends State<plusdialog_stful> {
 
                         },
                       ))),
-              Container(width: 15,),
+              Container(width: size.width*0.03,),
 
               IconButton(icon: Icon(flagg?Icons.flag:Icons.outlined_flag),iconSize: 28,color: flagg? Colors.red:null,
                 onPressed: (){
@@ -414,19 +416,20 @@ setState(() {en_text=text;
   Widget build(BuildContext context) {
     var model=Provider.of<CardsModel>(context);
     var model1=Provider.of<translator_model>(context);
+    Size size=MediaQuery.of(context).size;
     return SimpleDialog(
         contentPadding: EdgeInsets.all(30),
         children: <Widget>[
 
 
-          Container(padding: EdgeInsets.only(left: 55,bottom: 10),),
+          Container(padding: EdgeInsets.only(left: size.width*0.01,bottom: size.height*0.01),),
           Container(
-              height: 100,
+              height: size.height*0.15,
               decoration: BoxDecoration(color: Colors.white,
                   border: Border.all(color: Colors.blueAccent),
                   borderRadius: BorderRadius.all(Radius.circular(18))
               ),
-              child:Container(margin:EdgeInsets.symmetric(horizontal: 25,vertical: 20),
+              child:Container(margin:EdgeInsets.symmetric(horizontal: size.height*0.03,vertical: size.width*0.05),
                   child:TextFormField(
                     initialValue: en_text==""?null:en_text,
                     onChanged: (String s){
@@ -441,7 +444,7 @@ setState(() {en_text=text;
                     ),
                   ))) ,
 
-          Container(alignment: Alignment.center,height: 40,
+          Container(alignment: Alignment.center,height: size.height*0.05,
               child:en_text==""?null:IconButton(icon:Icon(Icons.repeat)
                 ,onPressed: (){
                   futureAlbum=fetchAlbum(en_text,model1.front,model1.back);
@@ -453,7 +456,7 @@ setState(() {en_text=text;
               )),
 
           Container(
-            height: 100,
+            height: size.height*0.15,
             decoration: BoxDecoration(color: Colors.white,border: Border.all(color: Colors.blueAccent),
                 borderRadius: BorderRadius.all(Radius.circular(18))
             ),
@@ -464,7 +467,7 @@ setState(() {en_text=text;
                 if (snapshot.hasData) {
                   jap_text=snapshot.data.text;
                   return Container(
-                      margin:EdgeInsets.symmetric(horizontal: 25,vertical: 20),
+                      margin:EdgeInsets.symmetric(horizontal: size.height*0.03,vertical: size.width*0.05),
                       child:(TextFormField(
                         initialValue: snapshot.data.text,
                         onChanged: (String s){
@@ -480,7 +483,7 @@ setState(() {en_text=text;
                 return CircularProgressIndicator();},
             )
                 :
-            Container(margin:EdgeInsets.symmetric(horizontal: 25,vertical: 20),
+            Container(margin:EdgeInsets.symmetric(horizontal: size.height*0.03,vertical: size.width*0.05),
                 child:(TextFormField(
                   initialValue: jap_text==""?null:jap_text,
                   onChanged: (String s){
@@ -495,10 +498,10 @@ setState(() {en_text=text;
                 ))) ,),
           Row(
             children: [
-              Container(width: 30,),
+              Container(width: size.width*0.07,),
               Container(
-                  height: 25,
-                  width:22,
+                  height: size.height*0.055,
+                  width:size.width*0.055,
                   child:(
                       RaisedButton(
                         elevation: 0,
@@ -514,10 +517,10 @@ setState(() {en_text=text;
                           orange=!orange;
                         });},
                       ))),
-              Container(width: 20,),
+              Container(width: size.width*0.05,),
               Container(
-                  height: 25,
-                  width:22,
+                  height: size.height*0.055,
+                  width:size.width*0.055,
                   child:(
                       RaisedButton(
                         elevation: 0,
@@ -533,10 +536,10 @@ setState(() {en_text=text;
                           purple=!purple;
                         });},
                       ))),
-              Container(width: 20,),
+              Container(width: size.width*0.05,),
               Container(
-                  height: 25,
-                  width:22,
+                  height: size.height*0.055,
+                  width:size.width*0.055,
                   child:(
                       RaisedButton(
                         elevation: 0,
@@ -553,10 +556,10 @@ setState(() {en_text=text;
                         });},
                       ))),
 
-              Container(width: 20,),
+              Container(width: size.width*0.05,),
               Container(
-                  height: 25,
-                  width: 22,
+                  height: size.height*0.055,
+                  width:size.width*0.055,
                   child:(
                       RaisedButton(
                         elevation: 0,
@@ -575,7 +578,7 @@ setState(() {en_text=text;
 
                         },
                       ))),
-              Container(width: 15,),
+              Container(width: size.width*0.03,),
 
               IconButton(icon: Icon(flagg?Icons.flag:Icons.outlined_flag),iconSize: 28,color: flagg? Colors.red:null,
                 onPressed: (){
