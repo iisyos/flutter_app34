@@ -23,7 +23,8 @@ class DeepthPageTransformer extends PageTransformer {
         ),
       );
     } else if (position <= 1) {
-      const double MIN_SCALE = 0.75;
+      const double MIN_SCALE = 0.05;
+      // default value is 0.75.
       // Scale the page down (between MIN_SCALE and 1)
       double scaleFactor = MIN_SCALE + (1 - MIN_SCALE) * (1 - position);
 

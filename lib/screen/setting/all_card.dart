@@ -55,7 +55,7 @@ class a_setting_card extends StatelessWidget {
     return Column(
 
       children: [
-        Container(height: 10,),
+        Container(height: size.height*0.01,),
         Container(
           height: size.height*0.14,
           width: size.width*0.97,
@@ -73,7 +73,7 @@ class a_setting_card extends StatelessWidget {
           ),
           child: Stack(
                 children: [
-                  Positioned(top: -10,left: 2,
+                  Positioned(top: -size.height*0.01,left: size.width*0.001,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -88,10 +88,10 @@ class a_setting_card extends StatelessWidget {
                           },
                         ),
                       ),
-                      Container(width: 80,),
+                      Container(width: size.width*0.15,),
                       Container(
-                          height: 20,
-                          width:20,
+                          height: size.height*0.07,
+                          width:size.width*0.05,
                           child:(
                               context.select((Others value) =>value.tab_triger)?null:RaisedButton(
                                 elevation: 0,
@@ -107,10 +107,10 @@ class a_setting_card extends StatelessWidget {
                                   s.on_orange(item);
                                   ;},
                               ))),
-                      Container(width: 16,),
+                      Container(width: size.width*0.045,),
                       Container(
-                          height: 20,
-                          width:20,
+                          height: size.height*0.07,
+                          width:size.width*0.05,
                           child:(
                               context.select((Others value) =>value.tab_triger)?null:RaisedButton(
                                 elevation: 0,
@@ -125,10 +125,10 @@ class a_setting_card extends StatelessWidget {
                                 onPressed: () {
                                   s.on_purple(item);
                                   ;},
-                              ))),Container(width: 16,),
+                              ))),Container(width: size.width*0.045,),
                       Container(
-                          height: 20,
-                          width:20,
+                          height: size.height*0.07,
+                          width:size.width*0.05,
                           child:(
                               context.select((Others value) =>value.tab_triger)?null:RaisedButton(
                                 elevation: 0,
@@ -144,10 +144,10 @@ class a_setting_card extends StatelessWidget {
                                   s.on_blue(item);
                                   ;},
                               ))),
-                      Container(height: 0,width: 16,),
+                      Container(width: size.width*0.045,),
                       Container(
-                          height: 20,
-                          width: 20,
+                          height: size.height*0.07,
+                          width:size.width*0.05,
                           child:(
                               context.select((Others value) =>value.tab_triger)?null: RaisedButton(
                                 elevation: 0,
@@ -183,7 +183,7 @@ class a_setting_card extends StatelessWidget {
                   right: size.width*0.05,
                   child:Container(
                     padding: EdgeInsets.symmetric(horizontal: 10),
-                    width: 150,
+                    width: size.width*0.35,
                     alignment:Alignment.topCenter ,
                     child: AutoSizeText(model.card_name,maxLines: 2,style: TextStyle(
                       fontSize: 20,fontWeight: FontWeight.bold
@@ -193,7 +193,7 @@ class a_setting_card extends StatelessWidget {
                     top: size.height*0.05,
                     left: size.width*0.05,
                     child:Container(
-                      width: 150,
+                      width: size.width*0.35,
                       alignment:Alignment.center ,
                       child: AutoSizeText(model.en_card_name,maxLines: 1,style: TextStyle(
                           fontSize: 25,fontWeight: FontWeight.bold
@@ -209,7 +209,7 @@ class a_setting_card extends StatelessWidget {
 
 
         ),
-        Container(height: 3,)
+
       ],
     );
   }

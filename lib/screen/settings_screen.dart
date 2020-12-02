@@ -5,6 +5,8 @@ import 'package:flutter_app34/screen/setting/all_card.dart';
 import "package:flutter_app34/screen/setting/ad_screen.dart";
 import "package:flutter_app34/screen/setting/setting.dart";
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+
 
 class settings_screen extends StatelessWidget {
   @override
@@ -30,13 +32,17 @@ class settings_screen extends StatelessWidget {
                 child: Stack(
                   children: [
                     Positioned(top: 12,left: 120,
-                    child: Text(Localized.of(context).title1,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),),
+                    child: Container(
+                        height: size.height*0.05,width: size.width*0.55,
+                        child: AutoSizeText(Localized.of(context).title1,maxLines:1,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)),),
                     Positioned(top:50 ,left: 20,
                     child:Icon(Icons.repeat,size: 70),),
-                    Positioned(top:80,left: 125,
-                    child: Text(Localized.of(context).text1,style: TextStyle(
-                      color: Colors.black.withOpacity(0.8),fontSize: 15
-                    ),),)
+                    Positioned(top:size.height*0.12,left: size.width*0.25,
+                    child: Container(width: size.width*0.7,height: size.height*0.1,
+                      child: AutoSizeText(Localized.of(context).text1,maxLines: 1,style: TextStyle(
+                        color: Colors.black.withOpacity(0.8),fontSize: 15
+                      ),),
+                    ),)
 
                   ],
                 ),
@@ -45,7 +51,10 @@ class settings_screen extends StatelessWidget {
             Container(height: size.height*0.03,),
             GestureDetector(
               onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => setting_all_card()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => setting_all_card(),
+                fullscreenDialog: false,
+
+              ));
               },
               child: Container(
                 height: size.height*0.25,
@@ -55,12 +64,12 @@ class settings_screen extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
-                    Positioned(top: 12,left: 140,
-                      child: Text(Localized.of(context).title2,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),),
+                    Positioned(top: 12,left: 120,
+                      child: AutoSizeText(Localized.of(context).title2,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),maxLines: 1,),),
                     Positioned(top:50 ,left: 20,
                       child:Icon(Icons.style,size: 70),),
-                    Positioned(top:80,left: 130,
-                      child: Text(Localized.of(context).text2,style: TextStyle(
+                    Positioned(top:size.height*0.12,left: size.width*0.25,
+                      child: AutoSizeText(Localized.of(context).text2,maxLines: 1,style: TextStyle(
                           color: Colors.black.withOpacity(0.8),fontSize: 15
                       ),),)
 
@@ -81,12 +90,12 @@ class settings_screen extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
-                    Positioned(top: 12,left: 140,
-                      child: Text(Localized.of(context).title3,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),),
+                    Positioned(top: 12,left: 120,
+                      child: AutoSizeText(Localized.of(context).title3,maxLines:1,style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),),
                     Positioned(top:50 ,left: 20,
                       child:Icon(Icons.tv,size: 70),),
-                    Positioned(top:80,left: 130,
-                      child: Text(Localized.of(context).text3,style: TextStyle(
+                    Positioned(top:size.height*0.12,left: size.width*0.25,
+                      child: AutoSizeText(Localized.of(context).text3,maxLines:1,style: TextStyle(
                           color: Colors.black.withOpacity(0.8),fontSize: 15
                       ),),)
 
@@ -113,124 +122,134 @@ class Localized {
 
   static Map<String, Map<String, String>> _localizedValues = {
     'en': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'de': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'es': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'fr': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'zh': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'ru': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'ko': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'hi': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'vi': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'th': {
-      'title1': 'translation settings',
+      'title1': 'translation setting',
       "text1":"Set the language to translate automatically",
       'title2': 'Card List',
       "text2":"Check the created card",
-      'title3': 'Advertising settings',
+      'title3': 'Advertising setting',
       "text3":"Set about the display of advertisements",
 
-      "text4":"If you look at the ad three times, all the ads will disappear",
+      "text4":"Watch the ad 3 times, all the ads disappear",
       "text5":"watch",
       "text6":"delete"
+      , "note":"Set the language you wanna translate source, and set the translated language target"
     },
     'ja': {
       'title1': '自動翻訳の設定',
@@ -242,7 +261,8 @@ class Localized {
 
       "text4":"広告を三回見るとすべての広告が消えます",
       "text5":"広告を見る",
-      "text6":"広告を消す"
+      "text6":"広告を消す",
+      "note":"翻訳したい言語をsorce,翻訳後の言語をtargetにセットしてください"
     },
   };
 
@@ -272,6 +292,9 @@ class Localized {
   }
   String get text6 {
     return _localizedValues[locale.languageCode]['text6'];
+  }
+  String get note {
+    return _localizedValues[locale.languageCode]['note'];
   }
 
 }

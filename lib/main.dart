@@ -133,14 +133,12 @@ class _MypageState extends State<Mypage> {
 
       bottomNavigationBar:BottomAppBar1(size: size),
       floatingActionButton: Container(
-          height: size.height*0.12,
-          width: size.width*0.2,
+          height: size.height*0.15,
+          width: size.width*0.18,
           child:FloatingActionButton(
             onPressed: () {
 
               showDialog(context: context,builder: (BuildContext context) =>plusdialog());
-
-
             },
             child:Icon(Icons.add,size: 50,),
           )),
@@ -216,7 +214,7 @@ class _homebodyState extends State<homebody> {
 
         child: Column(
           children: [
-            Container(height: size.height*0.032,),
+            Container(height: size.height*0.01,),
 
 
             Container(
@@ -244,7 +242,11 @@ class _homebodyState extends State<homebody> {
               height: size.height*0.02,
             ),
 
-            Container(height: 200, child:Flagg_CardWidget(size:size,position: 0)
+            Row(
+              children: [Container(height: 200,width: size.width*0.07,),
+                Container(height: 200, width: size.width*0.93,child:Flagg_CardWidget(size:size,position: 0)
+                ),
+              ],
             ),
             Container(
               height: size.height*0.05,
@@ -271,7 +273,7 @@ class _homebodyState extends State<homebody> {
               height: size.height*0.02,
             ),
             Container(
-              height: 200,
+              height: size.height*0.26,
               child: PageView(
               controller: PageController(viewportFraction: 0.8,initialPage: 2),
               scrollDirection: Axis.horizontal,
@@ -285,10 +287,6 @@ class _homebodyState extends State<homebody> {
               ]
           ),
         ),
-            Container(
-              height: size.height*0.05,
-            ),
-
           ],
 
           // bodywidget()
@@ -328,37 +326,40 @@ class Flagg_CardWidget extends StatelessWidget {
             },
             child:Hero(
               tag:"card",
-              child:Stack(children:[
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
-                  width: size.width*0.8,
-                  height: size.height*0.25,
-                  // child:Container(
-                  //   child: Center(child: Text(
-                  //      "Flagged",style: style)),
-                  // ),
-                  decoration: BoxDecoration(
-                      color: position%3==0?Colors.white:position%3==1?Colors.blue:Colors.red,
-                      borderRadius: BorderRadius.all(Radius.circular(36))
+              child:Scaffold(
+                backgroundColor: Color(0XFFececf4),
+                body: Stack(children:[
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    width: size.width*0.8,
+                    height: size.height*0.25,
+                    // child:Container(
+                    //   child: Center(child: Text(
+                    //      "Flagged",style: style)),
+                    // ),
+                    decoration: BoxDecoration(
+                        color: position%3==0?Colors.white:position%3==1?Colors.blue:Colors.red,
+                        borderRadius: BorderRadius.all(Radius.circular(36))
+                    ),
+
                   ),
+                  Positioned(
+                    top: 15,right: 30,child: Icon(Icons.flag,color: Color(0XFF646464)),
+                  ),
+                  Positioned(
+                      top: size.height*0.025,left: size.width*0.065,
+                      child: Container(
+                        width: size.height*0.04,
+                        height: size.width*0.05,
+                        decoration: BoxDecoration(
+                          color: Color(0XFFf4ecf4),
 
-                ),
-                Positioned(
-                  top: 15,right: 30,child: Icon(Icons.flag,color: Color(0XFF646464)),
-                ),
-                Positioned(
-                    top: 20,left: 30,
-                    child: Container(
-                      width: 22.0,
-                      height: 22.0,
-                      decoration: BoxDecoration(
-                        color: Color(0XFFf4ecf4),
+                          shape: BoxShape.circle,
 
-                        shape: BoxShape.circle,
-
-                      ),
-                    )) ,
-              ]),
+                        ),
+                      )) ,
+                ]),
+              ),
             )),
       ]);
 
@@ -397,51 +398,54 @@ class CardWidget extends StatelessWidget {
             },
               child:Hero(
                 tag:"card"+position.toString(),
-              child:Stack(children:[
-                Container(
+              child:Scaffold(
+                backgroundColor: Color(0XFFececf4),
+                body: Stack(children:[
+                  Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
             width: size.width*0.8,
             height: size.height*0.25,
             child:Container(
-              child: Center(child: Text(
-                  position%3==0?model.white_title.replaceAll(" ", "\n"):position%3==1?model.blue_title.replaceAll(" ", "\n"):model.red_title.replaceAll(" ", "\n"),style: style)),
+                child: Center(child: Text(
+                    position%3==0?model.white_title.replaceAll(" ", "\n"):position%3==1?model.blue_title.replaceAll(" ", "\n"):model.red_title.replaceAll(" ", "\n"),style: style)),
 
             ),
             decoration: BoxDecoration(
 
-                color: position==4?Colors.orange:position==5?Colors.purpleAccent:position==0?Colors.white:position==1?Colors.blue:Colors.red,
-                borderRadius: BorderRadius.all(Radius.circular(36))
+                  color: position==4?Colors.orange:position==5?Colors.purpleAccent:position==0?Colors.white:position==1?Colors.blue:Colors.red,
+                  borderRadius: BorderRadius.all(Radius.circular(36))
             ),
 
           ),
-                Positioned(
-                  top: 20,left: 30,
-                  child: Container(
-                    width: 22.0,
-                    height: 22.0,
-                    decoration: BoxDecoration(
-                      color: Color(0XFFf4ecf4),
+                  Positioned(
+                      top: size.height*0.025,left: size.width*0.065,
+                    child: Container(
+                      width: size.height*0.04,
+                      height: size.width*0.05,
+                      decoration: BoxDecoration(
+                        color: Color(0XFFf4ecf4),
 
-                      shape: BoxShape.circle,
+                        shape: BoxShape.circle,
 
+                      ),
+                    )) ,
+                  Positioned(
+                  right:size.width*0.02,top: size.height*0.09,
+                  child:RaisedButton(
+                    child: Icon(Icons.edit,size: 23,),
+                    color: position==4?Colors.orange:position==5?Colors.purpleAccent:position==0?Colors.white:position==1?Colors.blue:Colors.red,
+                    elevation: 0,
+                    shape: CircleBorder(
                     ),
-                  )) ,
-                Positioned(
-                right:10,top: 62,
-                child:RaisedButton(
-                  child: Icon(Icons.edit,size: 23,),
-                  color: position==4?Colors.orange:position==5?Colors.purpleAccent:position==0?Colors.white:position==1?Colors.blue:Colors.red,
-                  elevation: 0,
-                  shape: CircleBorder(
-                  ),
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) =>ChangeTitle(position: position,)
-                    );
-                  },
-                ),)
-              ]),
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>ChangeTitle(position: position,)
+                      );
+                    },
+                  ),)
+                ]),
+              ),
               )),
     ]);
 

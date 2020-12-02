@@ -31,7 +31,7 @@ class CardView extends StatelessWidget {
         backgroundColor:Color(0XFFececf4),
         body:Column(
       children:[
-              Container(height: 200),
+              Container(height: size.height*0.29),
               Container(
                 height: size.height*0.47,
                 child:TransformerPageView(
@@ -190,8 +190,8 @@ class a_card extends StatelessWidget {
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-                height: 35,
-                width: 35,
+                height: size.width*0.09,
+                width: size.width*0.09,
                 child:(
                     context.select((Others value) =>value.tab_triger)?null: RaisedButton(
                       elevation: 0,
@@ -208,8 +208,8 @@ class a_card extends StatelessWidget {
                       },
                     ))),
             Container(
-                height: 35,
-                width: 35,
+                height: size.width*0.09,
+                width: size.width*0.09,
                 child:(
                     context.select((Others value) =>value.tab_triger)?null: RaisedButton(
                       elevation: 0,
@@ -226,8 +226,8 @@ class a_card extends StatelessWidget {
                       },
                     ))),
             Container(
-                height: 35,
-                width:35,
+                height: size.width*0.09,
+                width: size.width*0.09,
                 child:(
                     context.select((Others value) =>value.tab_triger)?null:RaisedButton(
                       elevation: 0,
@@ -246,8 +246,8 @@ class a_card extends StatelessWidget {
 
 
             Container(
-                height: 35,
-                width: 35,
+                height: size.width*0.09,
+                width: size.width*0.09,
                 child:(
                     context.select((Others value) =>value.tab_triger)?null: RaisedButton(
                       elevation: 0,
@@ -288,9 +288,9 @@ class a_card extends StatelessWidget {
         Container(height:4),
         Row(
             children:[
-              Container(width: 10,),
+              Container(width: size.width*0.02,),
               Container(
-    height: 20,
+    height: size.height*0.05,
     child:context.select((Others value) =>value.tab_triger)?null: IconButton(
     icon:Icon(Icons.delete,color: Color(0XFF646464).withOpacity(0.8)),iconSize: 27,
 
@@ -330,7 +330,7 @@ class a_card extends StatelessWidget {
     },
     ),
     ),
-              Container(width: 123,),
+              Container(width: size.width*0.31,),
               Container(
           child: context.select((Others value) =>value.tab_triger)?null:Text(index.toString()+" / "+
               context.select((CardsModel value) =>
@@ -373,7 +373,7 @@ class _card_textState extends State<card_text> {
             padding: EdgeInsets.symmetric(horizontal: 40),
             child: Center(child: AutoSizeText(
               item.refresh?item.card_name:item.en_card_name
-              ,style: TextStyle(fontSize: 65),
+              ,style: TextStyle(fontSize: 55),
               maxLines: 1,
             ),),
           ),

@@ -5,6 +5,8 @@ import 'package:flutter_app34/ad_manager.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import "package:flutter_app34/screen/settings_screen.dart";
+import 'package:auto_size_text/auto_size_text.dart';
+
 class Ad_screen extends StatefulWidget {
   @override
   _Ad_screenState createState() => _Ad_screenState();
@@ -104,7 +106,9 @@ class _Ad_screenState extends State<Ad_screen> {
         Container(height: size.height*0.05,)
         ,Container(
           alignment: Alignment.center,
-          child:Text(Localized.of(context).text4,style: TextStyle(fontSize: 18),)
+          child:Container(
+              width: size.width*0.9,
+              child: AutoSizeText(Localized.of(context).text4,maxLines: 1,style: TextStyle(fontSize: 18),))
         ),
         Container(height: size.height*0.05,),
         Container(
